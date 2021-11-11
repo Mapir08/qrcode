@@ -1,0 +1,19 @@
+body{
+  font-family: $primaryFont, 'comic sans ms', cursive;
+}
+h1, ul{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+header, footer{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center;
+}

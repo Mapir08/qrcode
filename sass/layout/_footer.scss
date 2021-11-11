@@ -1,0 +1,10 @@
+footer{
+  margin-top: 10px;
+  color: $secondColor;
+  a{
+    color: $secondColor;
+    &:hover{
+      color: $thirdColor;
+    }
+  }
+}

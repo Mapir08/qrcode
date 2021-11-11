@@ -1,0 +1,47 @@
+.user{
+  text-align: center;
+  &_entete{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 25px;
+    font-weight: bolder;
+    div{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:not(:first-child){
+        color: $primaryColor;
+      }
+    }
+  }
+  &_ligne{
+    border-top: black solid 1px;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 30px;
+  }
+  &_initial{
+    background-color: $primaryColor;
+    width: 100px;
+  }
+  &_nom, &_prenom, &_region{
+    width: 155px;
+  }
+  &_tel{
+    width: 110px;
+  }
+  &_del{
+    font-family: 'Arial';
+    span{
+      font-size: 13px;
+      padding-left: 6px;
+      padding-right: 5px;
+      padding-bottom: 4px;
+      background-color: red;
+      border-radius: 6px;
+      &:hover{
+        box-shadow: 1px 1px 1px grey;
+        cursor: pointer;
+      }
+    }
+  }
+}
