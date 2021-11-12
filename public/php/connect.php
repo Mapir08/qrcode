@@ -1,5 +1,5 @@
 <?php
-class Connect 
+class Database
 {
   public static $dbhost = 'localhost';
   public static $dbname = 'qr';
