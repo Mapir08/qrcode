@@ -84,3 +84,21 @@
     }
   }
 }
+#user-password{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  input{
+    text-align:center;
+  }
+  button{
+    border:none;
+    border-radius: 5px;
+    margin-left: 4px;
+    padding-left: 25px;
+    padding-right: 25px;
+    &:hover{
+      box-shadow: 1px 1px 1px grey;
+    }
+  }
+}

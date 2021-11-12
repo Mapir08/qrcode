@@ -19,6 +19,10 @@
   <header class="container-fluid">
     <h1>Listes des utilisateurs</h1>
   </header>
+
+<?php
+  if ($_GET['pwd']=='Welcome123'){
+?>
   <section class="container user">
     <div class="user_entete">
       <div class="user_initial">Initiale</div>
@@ -28,7 +32,6 @@
       <div class="user_region">Région</div>
       <div class="user_del"></div>
     </div>
-    <!-- CREER UN FORMULAIRE D'AJOUT -->
     <section class="user_add">
       <form method="post" id="user-add">
         <div class="user_initial"><input name="initial" id="initial" type="text" class="adduser_initial"></div>
@@ -50,7 +53,6 @@
         <button type="submit">Add</button>
       </form>
     </section>
-    <!-- FIN DU FORMULAIRE D'AJOUT -->
     <?php
         $db = Database::connect();
         $tempo = $db->query('SELECT `initial`,`Nom`,`Prenom`,`tel`,`region` FROM `user`');
@@ -67,6 +69,20 @@
         }
       ?>
   </section>
+<?php
+  }
+  else
+  {
+?>
+
+<form method="get" id="user-password" class="container">
+    <input name="pwd" id="pwd" type="text" placeholder="Password">
+    <button>Go</button>
+</form>
+
+<?php
+  }
+?>
 
   <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
 </body>
