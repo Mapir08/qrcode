@@ -52,20 +52,9 @@
       flex-flow: row nowrap;
       align-items: center;
       height: 100%;
-      input, select{
-        text-align: center;
-        height: 32px;
-        border: 1px inset $secondColor;
-        border-radius: 5px;
-      }
       button{
-        border:none;
-        border-radius: 5px;
         margin-left: 4px;
         padding: 5px;
-        &:hover{
-          box-shadow: 1px 1px 1px grey;
-        }
       }
     }
     .user_initial{
@@ -92,13 +81,8 @@
     text-align:center;
   }
   button{
-    border:none;
-    border-radius: 5px;
     margin-left: 4px;
     padding-left: 25px;
     padding-right: 25px;
-    &:hover{
-      box-shadow: 1px 1px 1px grey;
-    }
   }
 }

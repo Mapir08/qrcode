@@ -20,9 +20,10 @@
     <h1>Listes des utilisateurs</h1>
   </header>
 
-<?php
-  if ($_GET['pwd']=='Welcome123'){
-?>
+  <?php
+    require '../php/connect.php';
+    if ($_GET['pwd']=='Welcome123'){
+  ?>
   <section class="container user">
     <div class="user_entete">
       <div class="user_initial">Initiale</div>
@@ -34,14 +35,13 @@
     </div>
     <section class="user_add">
       <form method="post" id="user-add">
-        <div class="user_initial"><input name="initial" id="initial" type="text" class="adduser_initial"></div>
-        <input name="nom" id="nom" type="text" class="adduser_nom">
-        <input name="prenom" id="prenom" type="text" class="adduser_prenom">
-        <input name="tel" id="tel" type="text" class="adduser_tel">
+        <div class="user_initial"><input name="initial" id="initial" type="text" class="adduser_initial" autocomplete="off"></div>
+        <input name="nom" id="nom" type="text" class="adduser_nom" autocomplete="off">
+        <input name="prenom" id="prenom" type="text" class="adduser_prenom" autocomplete="off">
+        <input name="tel" id="tel" type="text" class="adduser_tel" autocomplete="off">
         <select name="region" id="region" class="adduser_region">
           <option value=""></option>
           <?php
-            require '../php/connect.php';
             $db = Database::connect();
             $tempo = $db->query('SELECT `nomRegion` FROM `regions`');
             Database::disconnect();
@@ -69,20 +69,18 @@
         }
       ?>
   </section>
-<?php
-  }
-  else
-  {
-?>
-
-<form method="get" id="user-password" class="container">
-    <input name="pwd" id="pwd" type="text" placeholder="Password">
-    <button>Go</button>
-</form>
-
-<?php
-  }
-?>
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="get" id="user-password" class="container">
+      <input name="pwd" id="pwd" type="text" placeholder="Password">
+      <button>Go</button>
+  </form>
+  <?php
+    }
+  ?>
 
   <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
 </body>

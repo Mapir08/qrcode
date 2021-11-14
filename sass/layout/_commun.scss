@@ -17,3 +17,17 @@ header, footer{
   padding-right: 0 !important;
   text-align: center;
 }
+input, select{
+  text-align: center;
+  height: 32px;
+  border: 1px inset $secondColor;
+  border-radius: 5px;
+}
+button{
+  border:none;
+  border-radius: 5px;
+  &:hover{
+    box-shadow: 1px 1px 1px $secondColor;
+    ;
+  }
+}

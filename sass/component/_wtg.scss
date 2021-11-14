@@ -1,0 +1,79 @@
+.wtg{
+  text-align: center;
+  width: 720px;
+  &_entete{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 25px;
+    font-weight: bolder;
+    div{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &:not(:nth-child(2)){
+        color: $primaryColor;
+      }
+    }
+  }
+  &_ligne{
+    border-top: black solid 1px;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 30px;
+  }
+  &_serial{
+    background-color: $primaryColor;
+    width: 100px;
+  }
+  &_parc{
+    width: 390px;
+  }
+  &_pad{
+    width: 80px;
+  }
+  &_region{
+    width: 150px;
+  }
+  &_parcadd{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    input, select{
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: $thirdColor;
+      margin-bottom: 10px;
+    }
+    &-info{
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      padding-right: 20px;
+      label{
+        text-align: left;
+        margin-left: 25px;
+      }
+    }
+    &-wtg{
+      input{
+        border-top:none;
+        border-left:none;
+        border-right:none;
+      }
+      button{
+        margin-top: 20px;
+        
+        width: 100%;
+      }
+      .ligne{
+        padding-left: 20px;
+        border-left: 1px solid $primaryColor;
+      }
+      #serial{
+        width: 120px;
+      }
+      #pad{
+        width: 80px;
+      }
+    }
+  }
+}

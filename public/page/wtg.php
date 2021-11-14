@@ -17,9 +17,32 @@
   <header class="container-fluid">
     <h1>Listes des turbines</h1>
   </header>
-  <section class="container acceuil">
-
+  <?php 
+    require '../php/connect.php';
+  ?>
+  <section class="container wtg">
+    <div class="wtg_add"><a href="wtgadd.php?nom=&region=&nb=&client=&contact=" class="botn">Nouveau</a></div>
+    <div class="wtg_entete">
+      <div class="wtg_region">Région</div>
+      <div class="wtg_serial">Serial</div>
+      <div class="wtg_parc">Parc</div>
+      <div class="wtg_pad">N°</div>
+    </div>
+    <?php
+      $db = Database::connect();
+      $tempo = $db->query('SELECT wtg.serial, wtg.parc, wtg.pad, parc.region FROM wtg INNER JOIN parc ON parc.nom=wtg.parc');
+      Database::disconnect();
+      while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
+        echo '<div class="wtg_ligne">
+                <div class="wtg_region">'.$row['region'].'</div>
+                <div class="wtg_serial">'.$row["serial"].'</div>
+                <div class="wtg_parc">'.$row["parc"].'</div>
+                <div class="wtg_pad">'.$row["pad"].'</div>
+              </div>';
+      }
+    ?>
   </section>
+  
   <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
 </body>
 </html>
