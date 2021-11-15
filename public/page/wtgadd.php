@@ -23,26 +23,28 @@
     <div class="wtg_parcadd">
       <form method="get" id="wtg-info" class="wtg_parcadd-info">
         <label for="nom">Nom du Parc *</label><input name="nom" id="nom" type="text" autocomplete="off" value="<?php if($_GET['nom']){echo($_GET['nom']);} ?>">
-        <label for="abv">Abreviation</label><input name="abv" id="abv" type="text" autocomplete="off" value="<?php if($_GET['nom']){echo($_GET['abv']);} ?>">
-        
-        <label for="region">Région d'affiliation *</label>
-        <select name="region" id="region">
-          <option value=""></option>
-          <?php
-            require '../php/connect.php'; 
-            $db = Database::connect();
-            $tempo = $db->query('SELECT `nomRegion` FROM `regions`');
-            Database::disconnect();
-            while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
-              if ($row['nomRegion']==$_GET['region']){
-                echo '<option value="'.$row["nomRegion"].'" selected>'.$row["nomRegion"].'</option>';
-              } else {
-              echo '<option value="'.$row["nomRegion"].'">'.$row["nomRegion"].'</option>';
-              }
-            }
-          ?>
-        </select>
-
+        <div class="ligne">
+          <div><label for="abv">Abreviation *</label><input name="abv" id="abv" type="text" autocomplete="off" value="<?php if($_GET['abv']){echo($_GET['abv']);} ?>"></div>
+          <div>
+            <label for="region">Région d'affiliation *</label>
+            <select name="region" id="region">
+              <option value=""></option>
+              <?php
+                require '../php/connect.php'; 
+                $db = Database::connect();
+                $tempo = $db->query('SELECT `nomRegion` FROM `regions`');
+                Database::disconnect();
+                while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
+                  if ($row['nomRegion']==$_GET['region']){
+                    echo '<option value="'.$row["nomRegion"].'" selected>'.$row["nomRegion"].'</option>';
+                  } else {
+                  echo '<option value="'.$row["nomRegion"].'">'.$row["nomRegion"].'</option>';
+                  }
+                }
+              ?>
+            </select>
+          </div>
+        </div>
         <label for="np">Nombre WTG *</label><input name="nb" id="nb" type="text" autocomplete="off" value="<?php if($_GET['nb']){echo($_GET['nb']);} ?>">
         <label for="client">Client</label><input name="client" id="client" type="text" autocomplete="off" value="<?php if($_GET['client']){echo($_GET['client']);} ?>">
         <label for="contact">Mail Client</label><input name="contact" id="contact" type="text" autocomplete="off" value="<?php if($_GET['contact']){echo($_GET['contact']);} ?>">

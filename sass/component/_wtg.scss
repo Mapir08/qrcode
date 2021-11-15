@@ -52,6 +52,19 @@
         text-align: left;
         margin-left: 25px;
       }
+      .ligne{
+        display: flex;
+        flex-direction: row;
+        label{
+          width: 100%;
+        }
+        input{
+          width: 100px;
+        }
+        select{
+          width: 250px;
+        }
+      }
     }
     &-wtg{
       input{
