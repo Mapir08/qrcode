@@ -1,8 +1,6 @@
 $(function(){
 
   $('#wtg-info input, #wtg-info select').change(function(){
-    // let $this = $(this);
-    // console.log($this.index());
     $('#wtg-info').submit();
   });
   $('#wtg-nb').submit(function(e){

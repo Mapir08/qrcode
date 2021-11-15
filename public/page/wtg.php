@@ -21,7 +21,7 @@
     require '../php/connect.php';
   ?>
   <section class="container wtg">
-    <div class="wtg_add"><a href="wtgadd.php?nom=&region=&nb=&client=&contact=" class="botn">Nouveau</a></div>
+    <div class="wtg_add"><a href="wtgadd.php?nom=&abv=&region=&nb=&client=&contact=" class="botn">Nouveau</a></div>
     <div class="wtg_entete">
       <div class="wtg_region">Région</div>
       <div class="wtg_serial">Serial</div>
