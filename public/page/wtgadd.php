@@ -23,8 +23,9 @@
     <div class="wtg_parcadd">
       <form method="get" id="wtg-info" class="wtg_parcadd-info">
         <label for="nom">Nom du Parc *</label><input name="nom" id="nom" type="text" autocomplete="off" value="<?php if($_GET['nom']){echo($_GET['nom']);} ?>">
+        <label for="abv">Abreviation *</label><input name="abv" id="abv" type="text" autocomplete="off" value="<?php if($_GET['abv']){echo($_GET['abv']);} ?>">
         <div class="ligne">
-          <div><label for="abv">Abreviation *</label><input name="abv" id="abv" type="text" autocomplete="off" value="<?php if($_GET['abv']){echo($_GET['abv']);} ?>"></div>
+          <div><label for="np">Nombre WTG *</label><input name="nb" id="nb" type="text" autocomplete="off" value="<?php if($_GET['nb']){echo($_GET['nb']);} ?>"></div>
           <div>
             <label for="region">Région d'affiliation *</label>
             <select name="region" id="region">
@@ -45,7 +46,6 @@
             </select>
           </div>
         </div>
-        <label for="np">Nombre WTG *</label><input name="nb" id="nb" type="text" autocomplete="off" value="<?php if($_GET['nb']){echo($_GET['nb']);} ?>">
         <label for="client">Client</label><input name="client" id="client" type="text" autocomplete="off" value="<?php if($_GET['client']){echo($_GET['client']);} ?>">
         <label for="contact">Mail Client</label><input name="contact" id="contact" type="text" autocomplete="off" value="<?php if($_GET['contact']){echo($_GET['contact']);} ?>">
       </form>

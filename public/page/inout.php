@@ -19,16 +19,14 @@
   <header class="container-fluid">
     <h1>Générer une entrée / sortie</h1>
   </header>
-  <section class="container acceuil">
+  <section class="container inout">
 
     <?php 
       require '../php/connect.php';
       if (isset($_GET['sn'])) {
-    ?>
-    
-      Serial YOUHOU
+        
+        include("inoutQR.php");
 
-    <?php
       } elseif (isset($_GET['parc'])) {
     ?>
       <form method="get" id="new-inout-parc">

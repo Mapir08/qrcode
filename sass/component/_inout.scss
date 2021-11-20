@@ -1,0 +1,34 @@
+.inout{
+  text-align: center;
+  #new-inout-parc{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    #parc{
+      width: 300px;
+      margin-right: 20px;
+    }
+    #pad{
+      width: 100px;
+    }
+  }
+  #new-inout-sn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    #sn{
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: $secondFont;
+      letter-spacing: .2rem;
+    }
+    button{
+      width: 100px;
+    }
+  }
+  #inoutQR{
+    
+
+
+
+  }
+}

@@ -12,8 +12,6 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     $db2 -> query('INSERT INTO wtg (`serial`, `parc`, `pad`) VALUES ('.verif($_POST['serial'.$x]).', "'.verif($_POST['nom']).'", "'.verif($_POST['pad'.$x]).'")');
   }
 
-  echo ('ok');
-
   Database::disconnect();
 }
 
