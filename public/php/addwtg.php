@@ -4,7 +4,7 @@ require 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
   $db = Database::connect();
-  $db -> query('INSERT INTO parc (`nom`, `client`, `contact`, `region`, `abreviation`) VALUES ("'.verif($_POST['nom']).'", "'.verif($_POST['client']).'", "'.verif($_POST['contact']).'", "'.verif($_POST['region']).'", "'.verif($_POST['abv']).'")');
+  $db -> query('INSERT INTO parc (`nom`, `tel`, `mail`, `region`, `abreviation`) VALUES ("'.verif($_POST['nom']).'", "'.verif($_POST['tel']).'", "'.verif($_POST['mail']).'", "'.verif($_POST['region']).'", "'.verif($_POST['abv']).'")');
   Database::disconnect();
 
   $db2 = Database::connect();
