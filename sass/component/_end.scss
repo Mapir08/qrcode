@@ -1,0 +1,52 @@
+#end{
+  text-align: center;
+  font-size: 1.4rem;
+  div:first-child div:first-child{
+    margin-top: 20px;
+    color: #ff6565;
+  } 
+  div:not(:first-child){
+    margin: 20px 0;
+  }
+  #nTel{
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border: 3px outset #ff6565;
+    background: linear-gradient(-45deg,  #ffa1a1,#ff6565);
+    border-radius: 5px;
+    background-size: 200% 200%;
+    animation: gradient 1s ease infinite;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-shadow: lightgray 2px 2px 2px;
+    &:hover{
+      color: black;
+    }
+  }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (max-width: 430px) {
+  footer, header{
+    display:none;
+  }
+  .alaligne{
+    display: block;
+  }
+  #nTel{
+    width: 300px !important;
+  }
+}

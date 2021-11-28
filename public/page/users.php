@@ -75,7 +75,7 @@
     {
   ?>
   <form method="get" id="user-password" class="container">
-      <input name="pwd" id="pwd" type="text" placeholder="Password">
+      <input name="pwd" id="pwd" type="text" placeholder="Password" autocomplete="off">
       <button>Go</button>
   </form>
   <?php

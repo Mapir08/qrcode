@@ -1,5 +1,5 @@
 body{
-  font-family: $primaryFont, 'comic sans ms', cursive;
+  font-family: 'Times New Roman';
 }
 h1, ul{
   margin: 0;
@@ -30,4 +30,8 @@ button{
     box-shadow: 1px 1px 1px $secondColor;
     ;
   }
+}
+.error{
+  border-color: red;
+  color: red;
 }
