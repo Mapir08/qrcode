@@ -119,7 +119,7 @@ $(function(){
           if (!retour.date){$('#startDate').addClass('error');$('#startHour').addClass('error');confirm=false;} else {$('#startDate').removeClass('error');$('#startHour').removeClass('error');}
           if (!retour.cr){$('#cr').addClass('error');confirm=false;} else {$('#cr').removeClass('error');}
           if (confirm) {
-            // window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=out', "_self");
+            window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=out', "_self");
           }
         },
         error: function(e){

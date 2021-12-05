@@ -23,11 +23,11 @@
     background-color: $primaryColor;
     width: 100px;
   }
-  &_nom, &_prenom, &_region{
-    width: 150px;
+  &_nom, &_prenom, &_company{
+    width: 149px;
   }
   &_tel{
-    width: 105px;
+    width: 110px;
   }
   &_del{
     width: 35px;
@@ -65,11 +65,11 @@
     .adduser_initial{
       width: 100px;
     }
-    .adduser_nom, .adduser_prenom, .adduser_region{
-      width: 150px;
+    .adduser_nom, .adduser_prenom, .adduser_company{
+      width: 149px;
     }
     .adduser_tel{
-      width: 105px;
+      width: 110px;
     }
   }
 }

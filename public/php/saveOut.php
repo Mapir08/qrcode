@@ -32,24 +32,21 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
   }
 
   if ($confirm['date'] && $confirm['cr']){
-  //   $db = Database::connect();
-  //   if ($paused == "non") {
-  //     $db -> query('UPDATE in_out SET cr="'.$cr.'", stayStop="NA", `out`=NOW() WHERE id='.$id);
-  //   } elseif ($paused == "oui") {
-  //     if ($runO_N == "oui") {
-  //       $db -> query('UPDATE in_out SET date_run="'.$date.'" ,heure_run="'.$hour.'" ,cr="'.$cr.'" , stayStop="non", `out`=NOW() WHERE id='.$id);
-  //     } elseif ($runO_N == "non") {
-  //       $db -> query('UPDATE in_out SET cr="'.$cr.'" , stayStop="oui", `out`=NOW() WHERE id='.$id);
-  //     }
-  //   }
-  //   Database::disconnect();
+    $db = Database::connect();
+    if ($paused == "non") {
+      $db -> query('UPDATE in_out SET cr="'.$cr.'", stayStop="NA", `out`=NOW() WHERE id='.$id);
+    } elseif ($paused == "oui") {
+      if ($runO_N == "oui") {
+        $db -> query('UPDATE in_out SET date_run="'.$date.'" ,heure_run="'.$hour.'" ,cr="'.$cr.'" , stayStop="non", `out`=NOW() WHERE id='.$id);
+      } elseif ($runO_N == "non") {
+        $db -> query('UPDATE in_out SET cr="'.$cr.'" , stayStop="oui", `out`=NOW() WHERE id='.$id);
+      }
+    }
+    Database::disconnect();
     include ('sendMailOut.php');
   }
-
-
   echo json_encode($confirm);
 }
-
 
 function verif($var){
   $var=strip_tags($var);

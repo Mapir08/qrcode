@@ -29,8 +29,8 @@
       <div class="user_initial">Initiale</div>
       <div class="user_nom">Nom</div>
       <div class="user_prenom">Prénom</div>
-      <div class="user_tel">Téléphone</div>
-      <div class="user_region">Région</div>
+      <div class="user_tel">Tél</div>
+      <div class="user_company">Compagnie</div>
       <div class="user_del"></div>
     </div>
     <section class="user_add">
@@ -39,23 +39,13 @@
         <input name="nom" id="nom" type="text" class="adduser_nom" autocomplete="off">
         <input name="prenom" id="prenom" type="text" class="adduser_prenom" autocomplete="off">
         <input name="tel" id="tel" type="text" class="adduser_tel" autocomplete="off">
-        <select name="region" id="region" class="adduser_region">
-          <option value=""></option>
-          <?php
-            $db = Database::connect();
-            $tempo = $db->query('SELECT `nomRegion` FROM `regions`');
-            Database::disconnect();
-            while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
-              echo '<option value="'.$row["nomRegion"].'">'.$row["nomRegion"].'</option>';
-            }
-          ?>
-        </select>
+        <input name="company" id="company" class="adduser_company" autocomplete="off">
         <button type="submit">Add</button>
       </form>
     </section>
     <?php
         $db = Database::connect();
-        $tempo = $db->query('SELECT `initial`,`Nom`,`Prenom`,`tel`,`region` FROM `user`');
+        $tempo = $db->query('SELECT `initial`,`Nom`,`Prenom`,`tel`,`company` FROM `user`');
         Database::disconnect();
         while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
           echo '<div class="user_ligne">
@@ -63,7 +53,7 @@
                   <div class="user_nom">'.$row["Nom"].'</div>
                   <div class="user_prenom">'.$row["Prenom"].'</div>
                   <div class="user_tel">'.$row["tel"].'</div>
-                  <div class="user_region">'.$row["region"].'</div>
+                  <div class="user_company">'.$row["company"].'</div>
                   <div class="user_del"><span>x</span></div>
                 </div>';
         }
