@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vestas QR-Code</title>
+  <title>Vestas QR-Code / Vérification si QR-Code Créé</title>
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> <!-- caveat -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Bangers -->
@@ -15,18 +15,17 @@
 </head>
 <body>
   <header class="container-fluid">
-    <h1>Acceuil QR Code</h1>
+    <h1>Vérification si QR-Code Créé</h1>
   </header>
-  <section class="container acceuil">
-    <ul>
-      <li><a href="public/page/inout.php" class="botn">Générer une entrée/sortie</a></li>
-      <li><a href="public/page/listIO.html" class="botn">Liste des entrées/sorties</a></li>
-      <li><a href="public/page/fini.php" class="botn">Check si tous fini</a></li>
-      <li><a href="public/page/wtg.php" class="botn">Liste des WTG</a></li>
-      <li><a href="public/page/checkQR.php" class="botn">Check si QR créé</a></li>
-      <li><a href="public/page/users.php?pwd=" class="botn">Liste des utilisateurs</a></li>
-    </ul>
+  <?php 
+    require '../php/connect.php';
+  ?>
+  <section class="container checkQR">
+    <h2>A copier pour la creation du QR-Code</h2>
+    <p>https://qr.mapir.net/public/page/inout.php?sn=</p>
+
   </section>
-  <footer class="container-fluid" style="font-family: Caveat;">Site créé par M@PiR</footer>
+  
+  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
 </body>
 </html>
