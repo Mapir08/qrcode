@@ -15,7 +15,7 @@
 
     if($sn){
       $pdo = Database::connect();
-      $resultat1 = $pdo -> query('SELECT `id`, `serial`, `pauseO_N`, `date_pause`, `heure_pause`, `in` FROM `in_out` WHERE `serial`="'.verif($_GET['sn']).'" AND `out` IS NULL');
+      $resultat1 = $pdo -> query('SELECT `id`, `serial`, `pauseO_N`, `date_pause`, `heure_pause`, `in`, `details` FROM `in_out` WHERE `serial`="'.verif($_GET['sn']).'" AND `out` IS NULL');
       Database::disconnect();
       $in_out = $resultat1->fetch(PDO::FETCH_ASSOC);
       if ($in_out){ // Si une ligne dans la recherche est trouvé => c'est qu'on va faire le OUT, sinon c'est qu'on est sur le IN
@@ -23,7 +23,7 @@
       }else{
         $IO = "IN";
       }
-      // Si IN : 
+
       if ($IO == "IN"){
   ?>
         <div class="entete">
@@ -49,6 +49,7 @@
           </div>
           <div class="tel">
             <input type="text" name="telephone" id="telephone" autocomplete="off" placeholder="Tel" hidden>
+            <input type="text" name="company" id="company" autocomplete="off" placeholder="Company" hidden>
           </div>
         </div>
         <div class="so"><label for="so">SO</label><input type="text" name="so" id="so" autocomplete="off"></div>
@@ -74,6 +75,8 @@
                   echo('Paused '),date_format($date, 'd/m/Y'),(' at '),date_format($heure, 'H\hi');
                 }
               ?>
+              <br/>
+              <?php echo($in_out['details']); ?>
             </div>
           </div>
         </div>

@@ -57,6 +57,7 @@ $(function(){
     arrayIN.push({name:'t2', value:$('#inoutQR #t2').val()});
     arrayIN.push({name:'t3', value:$('#inoutQR #t3').val()});
     arrayIN.push({name:'telephone', value:$('#inoutQR #telephone').val()});
+    arrayIN.push({name:'company', value:$('#inoutQR #company').val()});
     arrayIN.push({name:'so', value:$('#inoutQR #so').val()});
     arrayIN.push({name:'detail', value:$('#inoutQR #detail').val()});    
     let arrayOUT = [];
@@ -83,13 +84,21 @@ $(function(){
           if (!retour.detail){$('#detail').addClass('error');confirm=false;} else {$('#detail').removeClass('error');}
           if (!retour.date){$('#stopDate').addClass('error');$('#stopHour').addClass('error');confirm=false;} else {$('#stopDate').removeClass('error');$('#stopHour').removeClass('error');}
           if (!retour.tel && ($('#telephone').val()=="")){
-            alert("You are not in the database, can you please give us a phone number ?");
+            alert("You are not in the database, can you please give us a phone number and company name ?");
             $('#telephone').removeAttr('hidden');
             $('#telephone').addClass('error');
             confirm=false;
           }else{
             $('#telephone').attr('hidden',true);
             $('#telephone').removeClass('error');
+          };
+          if (!retour.company && ($('#company').val()=="")){
+            $('#company').removeAttr('hidden');
+            $('#company').addClass('error');
+            confirm=false;
+          }else{
+            $('#company').attr('hidden',true);
+            $('#company').removeClass('error');
           };
           if (confirm) {
             window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=in', "_self");
@@ -110,7 +119,7 @@ $(function(){
           if (!retour.date){$('#startDate').addClass('error');$('#startHour').addClass('error');confirm=false;} else {$('#startDate').removeClass('error');$('#startHour').removeClass('error');}
           if (!retour.cr){$('#cr').addClass('error');confirm=false;} else {$('#cr').removeClass('error');}
           if (confirm) {
-            window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=out', "_self");
+            // window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=out', "_self");
           }
         },
         error: function(e){
