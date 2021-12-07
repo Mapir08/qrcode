@@ -18,9 +18,9 @@
       border-top: none;
       border-left: none;
       border-right: none;
-      font-family: "Times New Roman";
+      font-family: primaryFontBold;
       font-weight: bolder;
-      color: $thirdColor;
+      color: $primaryColor;
       letter-spacing: .1rem;
     }
     button{
@@ -31,14 +31,15 @@
     width: 500px;
     margin: auto;
     .entete{
-      background-color: $secondColor;
-      border: 3px lightgrey inset;
+      background-color: $primaryColor;
+      border: 3px $primaryColor inset;
+      color: $secondColor;
       border-radius: 15px;
       display: flex;
       flex-direction: row;
       align-items: center;
       .io{
-        font-family: "Times New Roman";
+        font-family: secondFont;
         font-weight: bolder;
         width: 100px;
         font-size: 2rem;
@@ -48,10 +49,16 @@
       .description{
         width: 400px;
         font-size: 1.2rem;
+        font-family: primaryFontBold;
+        font-style: italic;
       }
     }
     .form-check .form-check-input {
       float: right;
+    }
+    .form-check-input:checked {
+      background-color: $primaryColor !important;
+      border-color: $primaryColor !important;
     }
     .form-switch, .form-check {
       padding-left: 0;
@@ -77,7 +84,7 @@
       .input{
         display: flex;
         flex-direction: column;
-        border-left: 1px solid lightgrey;
+        border-left: 1px solid $thirdColor;
         margin-left: 5px;
         input{
           width: 200px;
@@ -132,7 +139,7 @@
     }
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 820px) {
   body{
     background: url('../img/turbine.png') no-repeat fixed bottom;
     background-size: 150%;
@@ -152,8 +159,7 @@
     display:none;
   }
   .entete{
-    background-color: $primaryColor !important;
-    border-color: $primaryColor !important;
+    margin-bottom: 30px;
     .io{
       font-size: 1.8rem !important;
     }
@@ -165,6 +171,12 @@
       #serial{
         display: block;
       }
+    }
+  }
+  .form-switch{
+    #pauseO_N{
+      transform: scale(1.6);
+      margin: 3px 0 0 0;
     }
   }
   .inout{
@@ -194,8 +206,11 @@
     .tech, .tech .tel{
       display: block !important;
     }
+    .tech{
+      margin-top: 30px !important;
+      margin-bottom: 30px !important;
+    }
     .tech .tel input{
-      background-color: $primaryColor;
       width: 200px !important;
       margin-left: 44px !important;
       margin-top: 5px !important;

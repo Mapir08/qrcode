@@ -9,19 +9,19 @@
     div{
       padding-top: 10px;
       padding-bottom: 10px;
-      &:not(:nth-child(2)){
-        color: $primaryColor;
-      }
+      font-family: primaryFontBold;
+      color: $primaryColor;
     }
   }
   &_ligne{
-    border-top: black solid 1px;
+    border-top: $primaryColor solid 1px;
     display: flex;
     flex-flow: row nowrap;
     height: 30px;
   }
   &_serial{
-    background-color: $primaryColor;
+    background-color: $secondColor;
+    font-family: primaryFontBold;
     width: 100px;
   }
   &_parc{

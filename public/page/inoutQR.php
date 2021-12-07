@@ -48,11 +48,11 @@
             </div>
           </div>
           <div class="tel">
-            <input type="text" name="telephone" id="telephone" autocomplete="off" placeholder="Tel" hidden>
+            <input type="text" name="telephone" id="telephone" autocomplete="off" placeholder="Tel" inputmode="numeric" hidden>
             <input type="text" name="company" id="company" autocomplete="off" placeholder="Company" hidden>
           </div>
         </div>
-        <div class="so"><label for="so">SO</label><input type="text" name="so" id="so" autocomplete="off"></div>
+        <div class="so"><label for="so">SO</label><input type="text" name="so" id="so" autocomplete="off" inputmode="numeric"></div>
         <div class="detail"><label for="detail">Détail</label><input type="text" name="detail" id="detail" autocomplete="off"></div>
         <button class="send" id="sendIN">Send</button>
   <?php

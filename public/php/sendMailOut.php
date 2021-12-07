@@ -27,11 +27,8 @@ if ($infoLigne['pauseO_N'] == "non"){
   $dateRun = "";
 }
 
-$dest = "math.perlier@gmail.com";
-$header = "From:"."mapir@vestas.com"."\r\n"."CC:"."mapir@vestas.com";
-
-$objet = "";
-$objet .= "OUT_TURBINE_".$infoLigne['serial']."_".$infoAbrev['abreviation']."_".$infoParc['pad'].""; 
+$to="math.perlier@gmail.com";
+$subject = "OUT_TURBINE_".$infoLigne['serial']."_".$infoAbrev['abreviation']."_".$infoParc['pad'].""; 
 
 $message = "";
 $message .= "TURBINE ID: ".$infoLigne['serial']."\n";
@@ -47,7 +44,6 @@ $message .= "WTG RUN DATE (dd/mm/yyyy): ".$dateRun."\n";
 $message .= "WTG RUN TIME (hh:mm): ".verif($_POST['startHour'])."\n";
 $message .= "SERVICE ORDER (OPTIONAL): ".$infoLigne['SO']."\n";
 
-// print_r($message);
-mail($dest, $objet, $message, $header);
+mail($to, $subject, $message);
 
 ?>

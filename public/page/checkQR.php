@@ -21,7 +21,7 @@
     require '../php/connect.php';
   ?>
   <section class="container checkQR">
-    <h2>A copier pour la creation du QR-Code</h2>
+    <h3>A copier pour la creation du QR-Code</h3>
     <p>https://qr.mapir.net/public/page/inout.php?sn=</p>
 
   </section>

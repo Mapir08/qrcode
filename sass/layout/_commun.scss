@@ -1,5 +1,5 @@
 body{
-  font-family: 'Times New Roman';
+  font-family: primaryFont;
 }
 h1, ul{
   margin: 0;
@@ -20,15 +20,14 @@ header, footer{
 input, select{
   text-align: center;
   height: 32px;
-  border: 1px inset $secondColor;
+  border: 1px inset $thirdColor;
   border-radius: 5px;
 }
 button{
   border:none;
   border-radius: 5px;
   &:hover{
-    box-shadow: 1px 1px 1px $secondColor;
-    ;
+    box-shadow: 1px 1px 1px $primaryColor;
   }
 }
 .error{

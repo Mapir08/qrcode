@@ -8,19 +8,20 @@
     font-weight: bolder;
     div{
       padding-top: 10px;
-      &:not(:first-child){
-        color: $primaryColor;
-      }
+      color: $primaryColor;
+      font-family: primaryFontBold;
+      font-style: italic;
     }
   }
   &_ligne{
-    border-top: black solid 1px;
+    border-top: $primaryColor solid 1px;
     display: flex;
     flex-flow: row nowrap;
     height: 30px;
   }
   &_initial{
-    background-color: $primaryColor;
+    background-color: $secondColor;
+    font-family: primaryFontBold;
     width: 100px;
   }
   &_nom, &_prenom, &_company{
@@ -58,7 +59,7 @@
       }
     }
     .user_initial{
-      background-color: $primaryColor;
+      background-color: $secondColor;
       height: 100%;
       padding-top: 24px;
     }

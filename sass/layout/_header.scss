@@ -1,11 +1,11 @@
 header{
   margin-bottom: 10px;
-  background-color: $secondColor ;
+  background-color: $thirdColor ;
   h1{
     padding-top: 20px;
     padding-bottom: 20px;
-    font-family: $secondFont;
+    font-family: secondFont;
+    font-style: italic;
     color: $primaryColor;
-    text-shadow: 5px 5px 5px black;
   }
 }

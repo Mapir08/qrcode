@@ -26,17 +26,15 @@ if($stopDate){
   $stopDate = date_format(new DateTime($stopDate), 'd/m/Y');
 }else{
   $stopDate="";
+  $stopHour="";
 }
 
 if(verif($_POST['company']) != ""){
   $resultat2['company'] = $_POST['company'];
 }
 
-$dest = "math.perlier@gmail.com";
-$header = "From:"."mapir@vestas.com"."\r\n"."CC:"."mapir@vestas.com";
-
-$objet = "";
-$objet .= "IN_TURBINE_".verif($_POST['serial'])."_".$infoAbrev['abreviation']."_".$infoParc['pad'];
+$to = "math.perlier@gmail.com";
+$subject = "IN_TURBINE_".verif($_POST['serial'])."_".$infoAbrev['abreviation']."_".$infoParc['pad'];
 
 $message = "";
 $message .= "TURBINE ID: ".verif($_POST['serial'])."\n";
@@ -52,7 +50,6 @@ $message .= "WTG STOP DATE (dd/mm/yyyy): ".$stopDate."\n";
 $message .= "WTG STOP TIME (hh:mm): ".$stopHour."\n";
 $message .= "SERVICE ORDER (OPTIONAL): ".verif($_POST['so'])."\n";
 
-// print_r($message);
-mail($dest, $objet, $message, $header);
+mail($to, $subject, $message);
 
 ?>

@@ -1,10 +1,21 @@
 // COULEURS
 
-$primaryColor : #c2ceff ;
-$secondColor : #b6b6b6;
-$thirdColor : #5d5dfd ;
+$primaryColor : #004281 ;
+$secondColor : #a0cfeb;
+$thirdColor : #d5d6d2 ;
 
 // POLICES 
 
-$primaryFont : Caveat ;
-$secondFont : Bangers ;
+@font-face {
+  font-family: "primaryFont" ;
+  src: url('../font/VestasSans_Standard.otf');
+}
+@font-face {
+  font-family: "primaryFontBold" ;
+  src: url('../font/VestasSans_Bold.otf');
+}
+@font-face {
+  font-family: "secondFont" ;
+  src: url('../font/VestasSans_Heavy.otf');
+}
+$thirdFont : Caveat ;

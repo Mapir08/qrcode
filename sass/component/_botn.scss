@@ -5,4 +5,8 @@
   padding-bottom: 5px;
   border-radius: 10px 0 10px 0 ;
   background-color: $primaryColor;
+  color: $thirdColor;
+  &:hover{
+    color:$secondColor;
+  }
 }

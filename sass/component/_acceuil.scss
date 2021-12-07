@@ -1,11 +1,8 @@
 .acceuil{
   text-align: center;
   width: 300px;
-  a:hover{
-    color:$thirdColor;
-  }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 820px) {
   .acceuil{
     display:none;
   }
