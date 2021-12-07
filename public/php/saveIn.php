@@ -14,7 +14,7 @@ $date = "";
 $heure = "";
 $arret = "";
 
-$tech1 = verif($_POST['t1']);
+$tech1 = verif(strtoupper($_POST['t1']));
 $detail = verif($_POST['detail']);
 $pauseO_N = verif($_POST['pauseO_N']);
 $stopDate = verif($_POST['stopDate']);

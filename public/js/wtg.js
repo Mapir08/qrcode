@@ -56,7 +56,7 @@ $(function(){
         url: '../php/addwtg.php',
         data: postdata,
         success: function(){
-          window.location.href = 'wtg.php';
+          window.open('wtg.php', "_self");
         }
       });
     }
