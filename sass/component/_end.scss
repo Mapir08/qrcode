@@ -1,29 +1,33 @@
 #end{
+  margin-top: 75px;
   text-align: center;
   font-size: 1.4rem;
-  div:first-child div:first-child{
-    margin-top: 20px;
-    color: #ff6565;
-  } 
-  div:not(:first-child){
-    margin: 20px 0;
-  }
   #nTel{
     display: block;
+    font-family: primaryFontBold;
     width: 400px;
     margin: 0 auto;
     padding: 20px 0;
-    border: 3px outset #ff6565;
-    background: linear-gradient(-45deg,  #ffa1a1,#ff6565);
+    color: $primaryColor;
+    border: 3px outset #c30000;
+    background: linear-gradient(-45deg,  rgba(195, 0, 0,0.5),#c30000);
     border-radius: 5px;
     background-size: 200% 200%;
-    animation: gradient 1s ease infinite;
+    animation: gradient 2s ease infinite;
     font-size: 2rem;
-    font-weight: bolder;
-    text-shadow: lightgray 2px 2px 2px;
     &:hover{
-      color: black;
+      color: $secondColor;
     }
+  }
+  .warning{
+    font-family: primaryFontBold;
+    color: #c30000;
+    div {
+      margin: 20px 0;
+    }
+  }
+  .lastWord{
+    margin : 20px 0;
   }
 }
 

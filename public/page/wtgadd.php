@@ -46,8 +46,8 @@
             </select>
           </div>
         </div>
+        <label for="tel">Client</label><input name="client" id="client" type="text" autocomplete="off" value="<?php if($_GET['client']){echo($_GET['client']);} ?>">
         <label for="tel">Téléphone Client</label><input name="tel" id="tel" type="text" autocomplete="off" value="<?php if($_GET['tel']){echo($_GET['tel']);} ?>">
-        <label for="mail">Mail Client</label><input name="mail" id="mail" type="text" autocomplete="off" value="<?php if($_GET['mail']){echo($_GET['mail']);} ?>">
       </form>
       <form method="post" id="wtg-nb" class="wtg_parcadd-wtg">
         <?php

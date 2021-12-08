@@ -15,16 +15,16 @@
     Database::disconnect();
     $infoAbrev = $resultat -> fetch(PDO::FETCH_ASSOC);
 
-if (verif($_POST['runO_N']) == "oui") {
+if ($runO_N == "oui") {
   $state = "RUN";
-  $dateRun = date_format(new DateTime(verif($_POST['startDate'])), 'd/m/Y');
 }else{
   $state = "STOP";
-  $dateRun = "";
 }
+
+$date = date_format(new DateTime($date), 'd/m/Y');
+
 if ($infoLigne['pauseO_N'] == "non"){
   $state = "RUN";
-  $dateRun = "";
 }
 
 $to="math.perlier@gmail.com";
@@ -38,10 +38,10 @@ $message .= "COMPANY: ".$infoLigne['company']."\n";
 $message .= "TECH1: ".$infoLigne['initial1']."\n";
 $message .= "TECH2: ".$infoLigne['initial2']."\n";
 $message .= "TECH3: ".$infoLigne['initial3']."\n";
-$message .= "OPERATION: ".verif($_POST['cr'])."\n";
+$message .= "OPERATION: ".$cr."\n";
 $message .= "WTG STATE (RUN/STOP/LIMITED): ".$state."\n";
-$message .= "WTG RUN DATE (dd/mm/yyyy): ".$dateRun."\n";
-$message .= "WTG RUN TIME (hh:mm): ".verif($_POST['startHour'])."\n";
+$message .= "WTG RUN DATE (dd/mm/yyyy): ".$date."\n";
+$message .= "WTG RUN TIME (hh:mm): ".$hour."\n";
 $message .= "SERVICE ORDER (OPTIONAL): ".$infoLigne['SO']."\n";
 
 mail($to, $subject, $message);

@@ -33,6 +33,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
     }
   } else {
     $arret="non";
+    date_default_timezone_set('Europe/Paris');
+    $stopDate=date('Y-m-d');
+    $stopHour=date('H:i');
     $confirm['date']=true;
   }
 
@@ -59,11 +62,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
   }
   if ($confirm['tech'] && $confirm['detail'] && $confirm['date'] && $confirm['tel'] && $confirm['company']) {
     $db = Database::connect();
-    if ($arret == "oui"){
-      $db -> query('INSERT INTO `in_out`(`serial`, `pauseO_N`, `in`, `initial1`, `tel`, `company`, `initial2`, `initial3`, `SO`, `details`, `date_pause`, `heure_pause`) VALUES ("'.verif($_POST['serial']).'","oui",NOW(),"'.$tech1.'","'.$telephone.'", "'.$company.'", "'.verif($_POST['t2']).'","'.verif($_POST['t3']).'","'.verif($_POST['so']).'","'.$detail.'","'.$stopDate.'","'.$stopHour.'")');
-    } elseif ($arret == "non"){
-      $db -> query('INSERT INTO `in_out`(`serial`, `pauseO_N`, `in`, `initial1`, `tel`, `company`, `initial2`, `initial3`, `SO`, `details`) VALUES ("'.verif($_POST['serial']).'","non",NOW(),"'.$tech1.'","'.$telephone.'", "'.$company.'", "'.verif($_POST['t2']).'","'.verif($_POST['t3']).'","'.verif($_POST['so']).'","'.$detail.'")');
-    }
+    // $db -> query('INSERT INTO `in_out`(`serial`, `pauseO_N`, `in`, `initial1`, `tel`, `company`, `initial2`, `initial3`, `SO`, `details`, `date_pause`, `heure_pause`) VALUES ("'.verif($_POST['serial']).'","'.$arret.'",NOW(),"'.$tech1.'","'.$telephone.'", "'.$company.'", "'.verif($_POST['t2']).'","'.verif($_POST['t3']).'","'.verif($_POST['so']).'","'.$detail.'","'.$stopDate.'","'.$stopHour.'")');
     Database::disconnect();
     include ('sendMailIn.php');
   }

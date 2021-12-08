@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="so"><label for="so">SO</label><input type="text" name="so" id="so" autocomplete="off" inputmode="numeric"></div>
-        <div class="detail"><label for="detail">Détail</label><input type="text" name="detail" id="detail" autocomplete="off"></div>
+        <div class="detail"><label for="detail">Motif</label><input type="text" name="detail" id="detail" autocomplete="off"></div>
         <button class="send" id="sendIN">Send</button>
   <?php
       }elseif ($IO=="OUT"){

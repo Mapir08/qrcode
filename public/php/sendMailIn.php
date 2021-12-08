@@ -22,12 +22,7 @@ if($arret=="oui"){
   $stopped="N";
 }
 
-if($stopDate){
-  $stopDate = date_format(new DateTime($stopDate), 'd/m/Y');
-}else{
-  $stopDate="";
-  $stopHour="";
-}
+$stopDate = date_format(new DateTime($stopDate), 'd/m/Y');
 
 if(verif($_POST['company']) != ""){
   $resultat2['company'] = $_POST['company'];

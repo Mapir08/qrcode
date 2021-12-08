@@ -37,7 +37,7 @@
 
       if ($tel['tel']){
     ?>  
-        <div>
+        <div class="warning">
           <div>For this parc,<span class="alaligne"> you need to call the customer :</span></div>
           <a href="tel:<?php echo $tel['tel'] ?>" id="nTel"><?php echo $tel['tel'] ?></a>
         </div>
@@ -45,12 +45,12 @@
       } 
       if ($_GET['when']=="in") {
     ?>
-        <div>You can start your job !</div>
+        <div class="lastWord">You can start your job !</div>
 
     <?php
       } elseif ($_GET['when']=="out") {
     ?>
-        <div>See you a next time. Bye</div>
+        <div class="lastWord">See you a next time. Bye</div>
     <?php
       }
     ?>
