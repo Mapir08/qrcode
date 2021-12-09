@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
 
   if ($confirm['date'] && $confirm['cr']){
     $db = Database::connect(); 
-    // $db -> query('UPDATE in_out SET date_run="'.$date.'" ,heure_run="'.$hour.'" ,cr="'.$cr.'" , runO_N="'.$runO_N.'", `out`=NOW() WHERE id='.$id);
+    $db -> query('UPDATE in_out SET date_run="'.$date.'" ,heure_run="'.$hour.'" ,cr="'.$cr.'" , runO_N="'.$runO_N.'", `out`=NOW() WHERE id='.$id);
     Database::disconnect();
     include ('sendMailOut.php');
   }

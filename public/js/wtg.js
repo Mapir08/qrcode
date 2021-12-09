@@ -61,4 +61,64 @@ $(function(){
       });
     }
   });
+
+  $('#wtg_regionSelect').change(function(){
+    let selection = $(this).val();
+    $('#wtg_ligne .wtg_ligne').each(function(){
+      if (selection == $(this).children('.wtg_region').text() || selection ==""){
+        $(this).removeAttr('hidden');
+      }else{
+        $(this).attr('hidden',true);
+      }
+    });
+  });
+
+  $('.wtg_parc').click(function(){
+    postdata = {parc:$(this).text()};
+    $('#popup h4').text($(this).text());
+    $('#popup').removeAttr('hidden');
+    $.ajax({
+      type: 'POST',
+      url: '../php/listWTG.php',
+      data: postdata,
+      dataType: 'json',
+      success: function(retour){
+        for (const ligne of retour){
+          let pbLift = "";
+          let pbRaiEch = "";
+          let pbExc= "";
+          let pbResq = "";
+          let pbCrane = "";
+
+          const today = new Date();
+          const dateLift = new Date(ligne['dateInspLift']);
+          const dateRaiEchExc = new Date(ligne['dateInspRaiEchExc']);
+          const dateCrane = new Date(ligne['dateInspCrane']);
+          const dateResq = new Date(ligne['dateValidResq']);
+
+          if(ligne['pbLift']=="oui" || dateLift.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbLift="error" }
+          if(ligne['pbRaiEch']=="oui" || dateRaiEchExc.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbRaiEch="error" }
+          if(ligne['pbExc']=="oui" || dateRaiEchExc.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbExc="error" }
+          if(ligne['pbCrane']=="oui" || dateCrane.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbCrane="error" }
+          if(ligne['pbResq']=="oui" || dateResq.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbResq="error" }
+
+          $('#allLigne').append('\
+            <div class="ligne">\
+              <div class="ligne_pad">'+ligne['pad']+'</div>\
+              <div class="ligne_serial">'+ligne['serial']+'</div>\
+              <div class="ligne_Lift '+pbLift+'">'+dateLift.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_RetE '+pbRaiEch+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Ext '+pbExc+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Crane '+pbCrane+'">'+dateCrane.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Resq '+pbResq+'">'+dateResq.toLocaleDateString("fr-FR")+'</div>\
+            </div>');
+        }
+      }
+    });
+  });
+  $('#closer').click(function(){
+    $('#popup').attr('hidden',true);
+    $('#allLigne .ligne').remove();
+  });
+
 });

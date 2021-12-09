@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> <!-- caveat -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Bangers -->
   <!-- SCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="../js/wtg.js"></script>
 </head>
 <body>
   <header class="container-fluid">
@@ -21,13 +23,27 @@
     require '../php/connect.php';
   ?>
   <section class="container wtg">
-    <div class="wtg_add"><a href="wtgadd.php?nom=&abv=&region=&nb=&tel=&client=" class="botn">Nouveau</a></div>
+    <div class="row">
+      <select id="wtg_regionSelect" placeholder="Région" class="wtg_regionSelect botn">
+        <option value="" selected>Régions</option>
+        <?php
+          $db = Database::connect();
+          $tempo = $db->query('SELECT `nomRegion` FROM `regions`');
+          Database::disconnect();
+          while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
+            echo '<option value="'.$row["nomRegion"].'">'.$row["nomRegion"].'</option>';
+          }
+        ?>
+      </select>
+      <div class="wtg_add"><a href="wtgadd.php?nom=&abv=&region=&nb=&tel=&client=" class="botn">Nouveau</a></div>
+    </div>
     <div class="wtg_entete">
       <div class="wtg_region">Region</div>
-      <div class="wtg_parc">Parc</div>
+      <div class="wtg_Parc">Parc</div>
       <div class="wtg_client">Client</div>
       <div class="wtg_tel">Téléphone</div>
     </div>
+    <div id='wtg_ligne'>
     <?php
       $db = Database::connect();
       $tempo = $db->query('SELECT `nom`,`tel`,`client`,`region` FROM `parc`');
@@ -41,6 +57,25 @@
               </div>';
       }
     ?>
+    </div>
+  </section>
+
+  <section id="popup" hidden>
+      <span id="closer">X</span>
+      <h4>Nom du Parc</h4>
+      <div class="fenetre">
+        <div class="entete">
+          <div class="entete_pad">N°</div>
+          <div class="entete_serial">Serial</div>
+          <div class="entete_Lift">Next date<span class="sautligne">Lift</span></div>
+          <div class="entete_RetE">Next date<span class="sautligne">Rail/Echelle</span></div>
+          <div class="entete_Ext">Next date<span class="sautligne">Extincteur</span></div>
+          <div class="entete_Crane">Next date<span class="sautligne">Crane</span></div>
+          <div class="entete_Resq">Validité<span class="sautligne">ResQ</span></div>
+        </div>
+        <div id="allLigne">
+        </div>
+      </div>
   </section>
   
   <footer class="container-fluid"><a href="../../index.html">retour</a></footer>

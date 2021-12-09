@@ -1,6 +1,20 @@
 .wtg{
   text-align: center;
   width: 800px;
+  padding: 0;
+  .row{
+    justify-content: space-between;
+    margin : 10px 0;
+  }
+  &_add{
+    width: 150px;
+    font-family: primaryFontBold;
+  }
+  &_regionSelect{
+    height: 34px;
+    width: 200px;
+    font-style: italic;
+  }
   &_entete{
     display: flex;
     flex-flow: row nowrap;
@@ -19,16 +33,20 @@
     flex-flow: row nowrap;
     height: 30px;
   }
-  &_parc{
+  &_Parc, &_parc{
     background-color: $secondColor;
     font-family: primaryFontBold;
     width: 350px;
   }
-  &_tel, &_client{
-    width: 150px;
+  &_parc{
+    padding-top: 2px;
+    &:hover{
+      cursor: pointer;
+    }
   }
-  &_region{
-    width: 120px;
+  &_tel, &_client, &_region{
+    width: 150px;
+    padding-top: 2px;
   }
   &_parcadd{
     display: flex;
@@ -83,6 +101,96 @@
       }
       #pad{
         width: 80px;
+      }
+    }
+  }
+}
+#popup{
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 395px);
+  width: 790px;
+  height: 400px;
+  background-color: $thirdColor;
+  border: 3px solid $primaryColor;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px black;
+  h4{
+    margin: 12px 100px;
+    font-family: primaryFontBold;
+    font-style: italic;
+    color: $primaryColor;
+  }
+  #closer{
+    position: absolute;
+    font-family: secondFont;
+    top: 10px;
+    right: 15px;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .fenetre{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 745px;
+    height: 328px;
+    .entete, .ligne{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      align-items: center;  
+    }
+    .entete{
+      background-color: $secondColor;
+      font-family: primaryFontBold;
+      font-style: italic;
+      border-radius: 10px 10px 0 0;
+      .sautligne{
+        display: block;
+      }
+      &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
+        width: 117px;
+      }
+      &_serial{
+        width: 100px;
+      }
+      &_pad{
+        width: 60px;
+      }
+      .entete_serial{
+        line-height: 48px;
+      }
+      div{
+        padding-top: 10px;
+      }
+      *:not(:first-child) {
+        border-left: 1px solid $primaryColor;
+      }
+    }
+    #allLigne{
+      background-color: white;
+      border-radius: 0 0 10px 10px;
+      max-height: 270px;
+      overflow: scroll;
+      .ligne{
+        &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
+          width: 117px;
+        }
+        &_serial{
+          width: 100px;
+        }
+        &_pad{
+          width: 60px;
+        }
+        *:not(:first-child) {
+          border-left: 1px solid $primaryColor;
+        }
+        div{
+          padding-top: 2px;
+          padding-bottom: 2px;
+        }
       }
     }
   }
