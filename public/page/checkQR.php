@@ -11,7 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet"> <!-- caveat -->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Bangers -->
   <!-- SCRIPT -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="../js/checkQR.js"></script>
 </head>
 <body>
   <header class="container-fluid">
@@ -20,10 +22,29 @@
   <?php 
     require '../php/connect.php';
   ?>
-  <section class="container checkQR">
-    <h3>A copier pour la creation du QR-Code</h3>
-    <p>https://qr.mapir.net/public/page/inout.php?sn=</p>
+  <section class="container" id="checkQR">
+    <h3>A copier pour la creation du QR-Code :</h3>
+    <span id="lien">https://qr.mapir.net/public/page/inout.php?sn=<span id="sn"></span></span><span id="copier" class="botn" hidden>Copier</span>
+    <h5>Listes QR Code non créé en fonctione des WTG enregistré dans la database :</h5>
+    <div id="listSerial">
+      <?php
+        $pdo = Database::connect();
+        $resultat = $pdo -> query('SELECT wtg.serial AS `Serial`, wtg.pad AS `Pad`, parc.nom AS `Parc` FROM wtg JOIN parc ON parc.nom = wtg.parc');
+        Database::disconnect();
 
+        while ($row = $resultat->fetch(PDO::FETCH_ASSOC)){
+          $qrImg = "../img/qr/".$row["Serial"].".png";
+          if (!file_exists($qrImg)){
+            echo '<div class="ligne">
+                    <div class="ligne_serial">'.$row["Serial"].'</div>
+                    <div class="ligne_pad">'.$row["Pad"].'</div>
+                    <div class="ligne_parc">'.$row["Parc"].'</div>
+                  </div>';
+          }
+        }
+      ?>
+
+    </div>
   </section>
   
   <footer class="container-fluid"><a href="../../index.html">retour</a></footer>

@@ -20,8 +20,7 @@ $(function(){
       type: 'POST',
       url: '../php/deluser.php',
       data: initiale,
-      success: function(erreur){
-        console.log(erreur);
+      success: function(){
         location.reload();
       }
     });

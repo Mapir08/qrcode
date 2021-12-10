@@ -1,0 +1,47 @@
+#checkQR{
+  width: 700px;
+  text-align: center;
+  h3{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h5{
+    color: $primaryColor;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  #lien{
+    font-style: italic;
+    color: $thirdColor;
+  }
+  #listSerial{
+    width: 400px;
+    margin: 20px auto;
+    .ligne{
+      display: flex;
+      flex-direction: row;
+      :not(:first-child){
+        border-left: 1px solid $primaryColor;
+      }
+      &_serial{
+        width: 100px;
+        cursor: pointer;
+        font-family: primaryFontBold;
+      }
+      &_pad{
+        width: 50px;
+      }
+      &_parc{
+        width: 250px;
+      }
+    }
+  }
+  .botn{
+    display: inline;
+    padding: 5px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+}
