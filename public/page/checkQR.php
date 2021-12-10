@@ -1,3 +1,11 @@
+<?php
+  if(isset($_FILES['file'])){
+    $tmpName = $_FILES['file']['tmp_name'];
+    $name = $_FILES['file']['name'];
+     move_uploaded_file($tmpName, '../img/qr/'.$name);
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -25,6 +33,11 @@
   <section class="container" id="checkQR">
     <h3>A copier pour la creation du QR-Code :</h3>
     <span id="lien">https://qr.mapir.net/public/page/inout.php?sn=<span id="sn"></span></span><span id="copier" class="botn" hidden>Copier</span>
+
+    <form id="form" action="checkQR.php" method="POST" enctype="multipart/form-data" hidden>
+      <input type="file" name="file"><button type="submit" class="botn">Ajouter Image</button>
+    </form>
+
     <h5>Listes QR Code non créé en fonctione des WTG enregistré dans la database :</h5>
     <div id="listSerial">
       <?php

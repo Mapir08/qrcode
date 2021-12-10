@@ -17,6 +17,7 @@ $(function(){
   $('#listSerial .ligne_serial').click(function(){
     $('#sn').text($(this).text());
     $('#copier').removeAttr('hidden');
+    $('#form').removeAttr('hidden');
   });
 
   $('#copier').click(function(){
