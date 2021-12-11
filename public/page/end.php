@@ -55,6 +55,6 @@
       }
     ?>
   </section>
-  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>

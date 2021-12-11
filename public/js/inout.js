@@ -11,7 +11,7 @@ $(function(){
       url: '../php/searchserial.php',
       data: postdata,
       success: function(serial){
-        $('#new-inout-sn #sn').val(serial); //Mettre serial une fois les tests fini !!!
+        $('#new-inout-sn #sn').val(serial);
         $('#new-inout-sn button').removeAttr('hidden');
       }
     });
@@ -103,9 +103,6 @@ $(function(){
           if (confirm) {
             window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=in', "_self");
           }
-        },
-        error: function(e){
-          console.log(e.responseText);
         }
       });
     } else if ($('#inoutQR #io').text() == 'OUT') {
@@ -121,9 +118,6 @@ $(function(){
           if (confirm) {
             window.open('end.php?serial='+$('#inoutQR #serial').text()+'&when=out', "_self");
           }
-        },
-        error: function(e){
-          console.log(e.responseText);
         }
       });
     }

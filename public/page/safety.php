@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
+?>
+
+!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -20,6 +27,28 @@
       <h1>Safety inspection date</h1>
   </header>
 
-  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
+  <?php 
+    require '../php/connect.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
+  ?>
+
+  <section id="safety">
+
+  </section>
+
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="POST" action="safety.php" id="user-password" enctype="multipart/form-data" class="container">
+      <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
+      <button type="submit" id='pwdGo'>Go</button>
+  </form>
+  <?php
+    }
+  ?>
+  
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>

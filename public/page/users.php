@@ -1,3 +1,10 @@
+<?php
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,8 +29,9 @@
 
   <?php
     require '../php/connect.php';
-    if ($_GET['pwd']=='Welcome123'){
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
   ?>
+
   <section class="container user">
     <div class="user_entete">
       <div class="user_initial">Initiale</div>
@@ -59,19 +67,20 @@
         }
       ?>
   </section>
+
   <?php
     }
     else
     {
   ?>
-  <form method="get" id="user-password" class="container">
+  <form method="POST" action="users.php" id="user-password" enctype="multipart/form-data" class="container">
       <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
-      <button>Go</button>
+      <button type="submit" id='pwdGo'>Go</button>
   </form>
   <?php
     }
   ?>
 
-  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>

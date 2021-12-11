@@ -4,6 +4,10 @@
     $name = $_FILES['file']['name'];
      move_uploaded_file($tmpName, '../img/qr/'.$name);
   }
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +31,13 @@
   <header class="container-fluid">
     <h1>Vérification si QR-Code Créé</h1>
   </header>
+
   <?php 
     require '../php/connect.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
   ?>
+
   <section class="container" id="checkQR">
-    <h3>A copier pour la creation du QR-Code :</h3>
     <span id="lien">https://qr.mapir.net/public/page/inout.php?sn=<span id="sn"></span></span><span id="copier" class="botn" hidden>Copier</span>
 
     <form id="form" action="checkQR.php" method="POST" enctype="multipart/form-data" hidden>
@@ -60,6 +66,19 @@
     </div>
   </section>
   
-  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="POST" action="checkQR.php" id="user-password" enctype="multipart/form-data" class="container">
+      <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
+      <button type="submit" id='pwdGo'>Go</button>
+  </form>
+  <?php
+    }
+  ?>
+  
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>

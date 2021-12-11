@@ -15,7 +15,6 @@ $(function(){
 
   $('.user_del').click(function(){
     let initiale = {nom:$(this).siblings('.user_initial').text()};
-    console.log(initiale);
     $.ajax({
       type: 'POST',
       url: '../php/deluser.php',

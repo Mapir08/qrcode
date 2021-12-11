@@ -1,3 +1,10 @@
+<?php
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,6 +24,11 @@
   <header class="container-fluid">
     <h1>Acceuil QR Code</h1>
   </header>
+
+  <?php 
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
+  ?>
+
   <section class="container acceuil">
     <ul>
       <li><a href="public/page/inout.php" class="botn">Générer une entrée/sortie</a></li>
@@ -24,9 +36,23 @@
       <li><a href="public/page/wtg.php" class="botn">Liste des WTG</a></li>
       <li><a href="public/page/safety.php" class="botn bg-secondary">Safety informations</a></li>
       <li><a href="public/page/checkQR.php" class="botn">Check si QR créé</a></li> <!-- bg-info -->
-      <li><a href="public/page/users.php?pwd=" class="botn">Liste des utilisateurs</a></li>
+      <li><a href="public/page/users.php" class="botn">Liste des utilisateurs</a></li>
     </ul>
   </section>
+
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="POST" action="index.php" id="user-password" enctype="multipart/form-data" class="container">
+      <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
+      <button type="submit" id='pwdGo'>Go</button>
+  </form>
+  <?php
+    }
+  ?>
+
   <footer class="container-fluid" style="font-family: Caveat;">Site créé par M@PiR</footer>
 </body>
 </html>

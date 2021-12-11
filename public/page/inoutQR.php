@@ -18,7 +18,7 @@
       $resultat1 = $pdo -> query('SELECT `id`, `serial`, `pauseO_N`, `date_pause`, `heure_pause`, `in`, `details` FROM `in_out` WHERE `serial`="'.verif($_GET['sn']).'" AND `out` IS NULL');
       Database::disconnect();
       $in_out = $resultat1->fetch(PDO::FETCH_ASSOC);
-      if ($in_out){ // Si une ligne dans la recherche est trouvé => c'est qu'on va faire le OUT, sinon c'est qu'on est sur le IN
+      if ($in_out){
         $IO = "OUT";
       }else{
         $IO = "IN";

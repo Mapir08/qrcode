@@ -1,3 +1,10 @@
+<?php
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,9 +26,12 @@
   <header class="container-fluid">
     <h1>Listes des turbines</h1>
   </header>
+
   <?php 
     require '../php/connect.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
   ?>
+
   <section class="container wtg">
     <div class="row">
       <select id="wtg_regionSelect" placeholder="Région" class="wtg_regionSelect botn">
@@ -78,6 +88,19 @@
       </div>
   </section>
   
-  <footer class="container-fluid"><a href="../../index.html">retour</a></footer>
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="POST" action="wtg.php" id="user-password" enctype="multipart/form-data" class="container">
+      <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
+      <button type="submit" id='pwdGo'>Go</button>
+  </form>
+  <?php
+    }
+  ?>
+
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>
