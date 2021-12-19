@@ -1,0 +1,84 @@
+#listIO{
+  width: 800px;
+  .selecteur{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-around;
+    *{
+      height: 35px;
+    }
+    *:disabled{
+      background-color: $thirdColor;
+      color: $primaryColor;
+      font-style: italic;
+    }
+    #region, #company{
+      width: 150px;
+    }
+    #parc{
+      width: 300px;
+    }
+    #wtg{
+      width: 100px;
+    }
+  }
+  .intervention{
+    overflow: hidden;
+    height: 50px;
+    border-radius: 10px;
+    .ligne{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-around;
+      &:first-child{
+        color: $primaryColor;
+        background: linear-gradient(to bottom, $secondColor 0%,$secondColor 85%,white 100%);
+        height: 50px;
+        align-items: center;
+        justify-content: space-around;
+        font-family: primaryFontBold;
+        .parc{
+          width: 300px;
+        }
+        .pad{
+          width: 80px;
+        }
+        .date{
+          font-size: smaller;    
+          font-family: primaryFont;
+          width: 160px;
+        }
+        .company{
+          width: 150px;
+        }
+      }
+      &:last-child{
+        height: 60px;
+        color: $primaryColor;
+        font-size: smaller;
+        border-radius: 0 0 10px 10px;
+        border-bottom: 1px $primaryColor solid;
+        .tech{
+          width: 200px;
+        }
+        .tel{
+          width: 110px;
+          font-style: italic;
+          align-self: center;
+        }
+        .detail{
+          width: 420px;
+          .titre{
+            font-family: primaryFontBold;
+          }
+          .pause_run{
+            font-style: italic;
+            font-size: 0.65rem;
+          }
+        }
+      }
+    }
+  }
+}

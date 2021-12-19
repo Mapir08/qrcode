@@ -25,7 +25,7 @@ if($arret=="oui"){
 $stopDate = date_format(new DateTime($stopDate), 'd/m/Y');
 
 if(verif($_POST['company']) != ""){
-  $resultat2['company'] = $_POST['company'];
+  $infoCompany['company'] = $_POST['company'];
 }
 
 $to = "math.perlier@gmail.com";

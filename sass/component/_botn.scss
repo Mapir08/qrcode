@@ -1,12 +1,12 @@
 .botn{
   margin-bottom: 10px;
   display: block;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 20px 5px 20px;
   border-radius: 10px 0 10px 0 ;
   background-color: $primaryColor;
   color: $thirdColor;
   &:hover{
+    cursor: pointer;
     color:$secondColor;
   }
 }

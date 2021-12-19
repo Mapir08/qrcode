@@ -91,11 +91,11 @@ $(function(){
           }else{
             $('#telephone').attr('hidden',true);
             $('#telephone').removeClass('error');
+            confirm=true;
           };
           if (!retour.company && ($('#company').val()=="")){
             $('#company').removeAttr('hidden');
             $('#company').addClass('error');
-            confirm=false;
           }else{
             $('#company').attr('hidden',true);
             $('#company').removeClass('error');
