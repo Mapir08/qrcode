@@ -30,6 +30,57 @@
   #inoutQR{
     width: 500px;
     margin: auto;
+    .imgState{
+      cursor: pointer;
+      position: absolute;
+      margin-left: 25px;
+      margin-top: 15px;
+      width: 60px;
+      height: 60px;
+      &-ok{
+        background-image: url('../img/Check.png');
+      }
+      &-nok{
+        background-image: url('../img/Warn.png');
+      }
+    }
+    .safety{
+      display: none;
+      position: absolute;
+      background-color: $thirdColor;
+      color: $primaryColor;
+      padding: 10px 30px;
+      margin-top: 25px;
+      margin-left: 110px;
+      border-radius: 0 10px 10px 10px;
+      span{
+        display: inline-block;
+      }
+      span:first-child{
+        font-family: primaryFontBold;
+        text-align: right;
+        width: 135px;
+      }
+      span:nth-child(2){
+        width: 110px;
+        font-style: italic;
+      }
+      span:nth-child(3){
+        width: 50px;
+        text-align: right;
+      }
+      &:before{
+        content:"";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-right: 30px solid $thirdColor;
+        top : 0;
+        left : -30px;
+      }
+    }
     .entete{
       background-color: $primaryColor;
       border: 3px $primaryColor inset;
@@ -161,6 +212,33 @@
       #serial{
         display: block;
       }
+    }
+  }
+  .imgState{
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    top: 115px;
+  }
+  .safety{
+    z-index: 2;
+    font-size: 0.75rem;
+    padding: 5px !important;
+    margin-top: -10px !important;
+    margin-left: 75px !important;
+    &:before{
+      border-top: 10px solid transparent !important;
+      border-bottom: 10px solid transparent !important;
+      border-right: 18px solid $thirdColor !important;
+      left : -18px !important;
+    }
+    span:first-child{
+      width: 105px !important;
+    }
+    span:nth-child(2){
+      width: 90px !important;
+    }
+    span:nth-child(3){
+      width: 40px;
     }
   }
   .form-switch{

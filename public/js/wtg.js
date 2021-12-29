@@ -1,5 +1,14 @@
 $(function(){
 
+  function load_js()
+  {
+     var head= document.getElementsByTagName('head')[0];
+     var script= document.createElement('script');
+     script.src= '../js/reloadWtg.js';
+     script.id='tempoScript';
+     head.appendChild(script);
+  }
+  
   $('#wtg-info input, #wtg-info select').change(function(){
     $('#wtg-info').submit();
   });
@@ -96,29 +105,35 @@ $(function(){
           const dateCrane = new Date(ligne['dateInspCrane']);
           const dateResq = new Date(ligne['dateValidResq']);
 
-          if(ligne['pbLift']=="oui" || dateLift.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbLift="error" }
-          if(ligne['pbRaiEch']=="oui" || dateRaiEchExc.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbRaiEch="error" }
-          if(ligne['pbExc']=="oui" || dateRaiEchExc.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbExc="error" }
-          if(ligne['pbCrane']=="oui" || dateCrane.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbCrane="error" }
-          if(ligne['pbResq']=="oui" || dateResq.toLocaleDateString("fr-FR")<today.toLocaleDateString("fr-FR")){ pbResq="error" }
+          if(ligne['pbLift']=="oui" || dateLift<today){ pbLift="error" }
+          if(ligne['pbRaiEch']=="oui" || dateRaiEchExc<today){ pbRaiEch="error" }
+          if(ligne['pbExc']=="oui" || dateRaiEchExc<today){ pbExc="error" }
+          if(ligne['pbCrane']=="oui" || dateCrane<today){ pbCrane="error" }
+          if(ligne['pbResq']=="oui" || dateResq<today){ pbResq="error" }
 
           $('#allLigne').append('\
             <div class="ligne">\
               <div class="ligne_pad">'+ligne['pad']+'</div>\
               <div class="ligne_serial">'+ligne['serial']+'</div>\
-              <div class="ligne_Lift '+pbLift+'">'+dateLift.toLocaleDateString("fr-FR")+'</div>\
-              <div class="ligne_RetE '+pbRaiEch+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
-              <div class="ligne_Ext '+pbExc+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
-              <div class="ligne_Crane '+pbCrane+'">'+dateCrane.toLocaleDateString("fr-FR")+'</div>\
-              <div class="ligne_Resq '+pbResq+'">'+dateResq.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Lift date '+pbLift+'">'+dateLift.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_RetE date '+pbRaiEch+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Ext date '+pbExc+'">'+dateRaiEchExc.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Crane date '+pbCrane+'">'+dateCrane.toLocaleDateString("fr-FR")+'</div>\
+              <div class="ligne_Resq date '+pbResq+'">'+dateResq.toLocaleDateString("fr-FR")+'</div>\
             </div>');
         }
+        load_js();
       }
     });
   });
   $('#closer').click(function(){
     $('#popup').attr('hidden',true);
     $('#allLigne .ligne').remove();
+    $('#tempoScript').remove();
+  });
+
+  $('#alligne .ligne').click(function(){
+    console.log($(this).text());
   });
 
 });

@@ -118,6 +118,7 @@
   h4{
     margin: 12px 100px;
     font-family: primaryFontBold;
+    text-decoration: underline;
     font-style: italic;
     color: $primaryColor;
   }
@@ -174,12 +175,15 @@
       border-radius: 0 0 10px 10px;
       max-height: 270px;
       overflow: scroll;
+      cursor: default;
       .ligne{
         &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
           width: 117px;
         }
         &_serial{
           width: 100px;
+          font-family: primaryFontBold;
+          color: $primaryColor;
         }
         &_pad{
           width: 60px;
@@ -190,6 +194,11 @@
         div{
           padding-top: 2px;
           padding-bottom: 2px;
+        }
+        .listeWTGdate{
+          width: 115px;
+          height: 25px;
+          font-size: 0.75rem;
         }
       }
     }

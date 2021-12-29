@@ -122,4 +122,8 @@ $(function(){
       });
     }
   });
+
+  $('#state').click(function(){
+    $('#postit').toggle();
+  });
 });

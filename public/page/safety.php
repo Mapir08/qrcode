@@ -36,6 +36,7 @@
 
   </section>
 
+  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
   <?php
     }
     else
@@ -49,6 +50,5 @@
     }
   ?>
   
-  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
 </body>
 </html>

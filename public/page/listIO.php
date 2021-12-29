@@ -1,3 +1,10 @@
+<?php
+  if (isset($_POST['pwd'])){
+    setcookie("pwd", $_POST['pwd'], time()+3600);
+    header("Refresh:0");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,6 +33,8 @@
     $db = Database::connect();
     $in_out = $db->query('SELECT * FROM `in_out`');
     Database::disconnect();
+
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
   ?>
 
   <section class="container" id="listIO">
@@ -108,7 +117,19 @@
               </div>';
       }
     ?>
-
-  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
+    <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
+  
+  <?php
+    }
+    else
+    {
+  ?>
+  <form method="POST" action="wtg.php" id="user-password" enctype="multipart/form-data" class="container">
+      <input name="pwd" id="pwd" type="password" placeholder="Password" autocomplete="off">
+      <button type="submit" id='pwdGo'>Go</button>
+  </form>  
+  <?php
+    }
+  ?>
 </body>
 </html>
