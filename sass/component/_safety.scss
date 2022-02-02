@@ -1,0 +1,141 @@
+#safety{
+  text-align: center;
+  #regionSelect select{
+    margin-top: 10px;
+  }
+  #parcSelect button{
+    display: block;
+    margin: auto;
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  select{
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  h2{
+    font-family: primaryFontBold;
+    color: $primaryColor;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #listPB{
+    display: flex;
+    flex-direction: row;
+    width: 550px;
+    justify-content: center;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    .listeWTG{
+      display: flex;
+      flex-direction: row;
+      width: 370px;
+      overflow-y: scroll;
+      .colored{
+        background-color: $thirdColor;
+      }
+      .eachWTG{
+        width: 50px;
+        min-width: 50px;
+        .titre{
+          font-family: primaryFontBold !important;
+        }
+        input{
+          height: 13px;
+        }
+      }
+    }
+    .sommaire{
+      color: $primaryColor;
+      font-family: primaryFontBold;
+      width: 100px;
+    }
+  }
+  #liste{
+    margin: 0 auto;
+    width: 550px;
+    .liste_WTG{
+      display: inline-block;
+      margin: 0 5px;
+      .spanSerial{
+        display: none;
+      }
+      label{
+        width: 80px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border: 1px solid $primaryColor;
+        border-radius: 10px;
+        color: $primaryColor;
+      }
+      input:checked + label{
+        background-color: $primaryColor;
+        color: $thirdColor;
+        font-family: primaryFontBold;
+        border-color: $thirdColor;
+      }
+    }
+  }
+  #raisonInter{
+    margin-bottom: 20px;
+    #dateInter{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .raison{
+      display: inline-block;
+      label{
+        width: 200px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border: 1px solid $primaryColor;
+        border-radius: 10px;
+        color: $primaryColor;
+      }
+      input:checked + label{
+        background-color: $primaryColor;
+        color: $thirdColor;
+        font-family: primaryFontBold;
+        border-color: $thirdColor;
+      }
+    }
+  }
+  .botn{
+    width: 100px;
+    margin: 10px auto;
+  }
+  .form-check .form-check-input {
+    float: right;
+  }
+  .form-check-input:checked {
+    background-color: $primaryColor !important;
+    border-color: $primaryColor !important;
+  }
+  .form-switch, .form-check {
+    padding-left: 0;
+    width: 200px;
+    padding-right: 40px;
+  }
+  .form-check {
+    margin: 10px auto 0;
+  }
+}
+@media screen and (max-width: 820px) {
+  #regionSelect{
+    margin-top: 50px !important;
+  }
+  #liste{
+    width: 350px !important;
+    .liste_WTG label{
+      font-size: 0.8rem;
+      width: 60px !important;
+    }
+  }
+  #listPB{
+    width: 350px !important;
+    .listeWTG{
+      width: 250px !important;
+    }
+  }
+}
