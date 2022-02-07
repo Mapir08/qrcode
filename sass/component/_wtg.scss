@@ -1,6 +1,6 @@
 .wtg{
   text-align: center;
-  width: 800px;
+  width: 1000px;
   padding: 0;
   .row{
     justify-content: space-between;
@@ -36,17 +36,51 @@
   &_Parc, &_parc{
     background-color: $secondColor;
     font-family: primaryFontBold;
-    width: 350px;
+    width: 345px;
+  }
+  &_Abv, &_abv{
+    width: 200px;
+  }
+  &_abv{
+    align-self: center;
+    font-size: 0.8rem;
   }
   &_parc{
     padding-top: 2px;
     &:hover{
       cursor: pointer;
+      text-shadow: 1px 1px 2px $thirdColor;
     }
   }
-  &_tel, &_client, &_region{
+  &_tel:hover, &_client:hover, &_abv:hover{
+    cursor: pointer;
+    text-shadow: 1px 1px 1px $secondColor;
+  }
+
+
+  &_client, &_Client, &_region{
     width: 150px;
     padding-top: 2px;
+  }
+  &_Tel, &_tel{
+    width: 120px;
+    padding-top: 2px;
+  }
+  &_del{
+    width: 35px;
+    font-family: 'Arial';
+    span{
+      font-size: 13px;
+      padding-left: 6px;
+      padding-right: 5px;
+      padding-bottom: 4px;
+      background-color: red;
+      border-radius: 6px;
+      &:hover{
+        box-shadow: 1px 1px 1px grey;
+        cursor: pointer;
+      }
+    }
   }
   &_parcadd{
     display: flex;
@@ -152,7 +186,7 @@
         display: block;
       }
       &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
-        width: 117px;
+        width: 114px;
       }
       &_serial{
         width: 100px;
@@ -174,11 +208,11 @@
       background-color: white;
       border-radius: 0 0 10px 10px;
       max-height: 270px;
-      overflow: scroll;
+      overflow-y: scroll;
       cursor: default;
       .ligne{
         &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
-          width: 117px;
+          width: 114px;
         }
         &_serial{
           width: 100px;

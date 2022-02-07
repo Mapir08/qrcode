@@ -1,0 +1,57 @@
+.area{
+  text-align: center;
+  width: 375px;
+  &_entete{
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 25px;
+    font-weight: bolder;
+    div{
+      padding-top: 10px;
+      color: $primaryColor;
+      font-family: primaryFontBold;
+      font-style: italic;
+    }
+  }
+  &_ligne{
+    border-top: $primaryColor solid 1px;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 30px;
+  }
+  &_nom, &_manager{
+    width: 150px;
+  }
+  &_del{
+    width: 35px;
+    font-family: 'Arial';
+    span{
+      font-size: 13px;
+      padding-left: 6px;
+      padding-right: 5px;
+      padding-bottom: 4px;
+      background-color: red;
+      border-radius: 6px;
+      &:hover{
+        box-shadow: 1px 1px 1px grey;
+        cursor: pointer;
+      }
+    }
+  }
+  &_add{
+    height: 80px;
+    form{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      height: 100%;
+      button{
+        margin-left: 4px;
+        padding: 5px;
+      }
+    }
+    .addarea_nom, .addarea_manager{
+      width: 160px;
+    }
+  }
+}

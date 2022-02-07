@@ -34,7 +34,8 @@
     $in_out = $db->query('SELECT * FROM `in_out`');
     Database::disconnect();
 
-    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
+    require '../php/pass.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']==$pass){
   ?>
 
   <section class="container" id="listIO">

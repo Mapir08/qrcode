@@ -132,8 +132,72 @@ $(function(){
     $('#tempoScript').remove();
   });
 
-  $('#alligne .ligne').click(function(){
-    console.log($(this).text());
+  $('.wtg_client').click(function(){
+    let input = prompt("Changer le nom du client :");
+    if (input !== null){
+      let info = {
+        'parc' : $(this).siblings('.wtg_parc').text(),
+        'newData' : input,
+        'type' : "client"
+      };
+      $.ajax({
+        type: 'POST',
+        url: '../php/majWTG.php',
+        data: info,
+        success: function(){
+          location.reload();
+        }
+      });
+    }
+  });
+  $('.wtg_tel').click(function(){
+    let input = prompt("Changer le numéro de téléphone de contact :");
+    if (input !== null){
+      let info = {
+        'parc' : $(this).siblings('.wtg_parc').text(),
+        'newData' : input,
+        'type' : "tel"
+      };
+      $.ajax({
+        type: 'POST',
+        url: '../php/majWTG.php',
+        data: info,
+        success: function(){
+          location.reload();
+        }
+      });
+    }
+  });
+  $('.wtg_abv').click(function(){
+    let input = prompt("Changer l'abréviation :");
+    if (input !== null){
+      let info = {
+        'parc' : $(this).siblings('.wtg_parc').text(),
+        'newData' : input,
+        'type' : "abreviation"
+      };
+      $.ajax({
+        type: 'POST',
+        url: '../php/majWTG.php',
+        data: info,
+        success: function(){
+          location.reload();
+        }
+      });
+    }
   });
 
+  $('.wtg_del').click(function(){
+    let nomParc = {nom:$(this).siblings('.wtg_parc').text()};
+    if (confirm("Es-tu sur de vouloir supprimer le parc ? Toutes les entrées/sorties le seront également.")){
+      $.ajax({
+        type: 'POST',
+        url: '../php/delparc.php',
+        data: nomParc,
+        success: function(e){
+          location.reload();
+        }
+      });
+    }
+  });
 });

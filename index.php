@@ -34,9 +34,10 @@
       <li><a href="public/page/inout.php" class="botn">Générer une entrée/sortie</a></li>
       <li><a href="public/page/listIO.php" class="botn">Liste des entrées/sorties</a></li>
       <li><a href="public/page/wtg.php" class="botn">Liste des WTG</a></li>
-      <li><a href="public/page/safety.php" class="botn bg-info">Safety informations</a></li>
-      <li><a href="public/page/checkQR.php" class="botn">Check si QR créé</a></li> <!-- bg-info -->
+      <li><a href="public/page/safety.php" class="botn">Safety informations</a></li>
+      <li><a href="public/page/checkQR.php" class="botn">Check si QR créé</a></li>
       <li><a href="public/page/users.php" class="botn">Liste des utilisateurs</a></li>
+      <li><a href="public/page/area.php" class="botn">Liste des régions</a></li>
     </ul>
   </section>
 

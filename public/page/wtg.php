@@ -29,7 +29,8 @@
 
   <?php 
     require '../php/connect.php';
-    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
+    require '../php/pass.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']==$pass){
   ?>
 
   <section class="container wtg">
@@ -50,20 +51,23 @@
     <div class="wtg_entete">
       <div class="wtg_region">Region</div>
       <div class="wtg_Parc">Parc</div>
-      <div class="wtg_client">Client</div>
-      <div class="wtg_tel">Téléphone</div>
+      <div class="wtg_Abv">Abreviation</div>
+      <div class="wtg_Client">Client</div>
+      <div class="wtg_Tel">Téléphone</div>
     </div>
     <div id='wtg_ligne'>
     <?php
       $db = Database::connect();
-      $tempo = $db->query('SELECT `nom`,`tel`,`client`,`region` FROM `parc`');
+      $tempo = $db->query('SELECT `nom`,`tel`,`client`,`region`,`abreviation` FROM `parc`');
       Database::disconnect();
       while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
         echo '<div class="wtg_ligne">
                 <div class="wtg_region">'.$row["region"].'</div>
                 <div class="wtg_parc">'.$row["nom"].'</div>
+                <div class="wtg_abv">'.$row["abreviation"].'</div>
                 <div class="wtg_client">'.$row["client"].'</div>
                 <div class="wtg_tel">'.$row["tel"].'</div>
+                <div class="wtg_del"><span>x</span></div>
               </div>';
       }
     ?>

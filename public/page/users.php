@@ -29,7 +29,8 @@
 
   <?php
     require '../php/connect.php';
-    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']=='Welcome123'){
+    require '../php/pass.php';
+    if (isset($_COOKIE['pwd']) && $_COOKIE['pwd']==$pass){
   ?>
 
   <section class="container user">
@@ -38,7 +39,7 @@
       <div class="user_nom">Nom</div>
       <div class="user_prenom">Prénom</div>
       <div class="user_tel">Tél</div>
-      <div class="user_company">Compagnie</div>
+      <div class="user_company">Entreprise</div>
       <div class="user_del"></div>
     </div>
     <section class="user_add">
