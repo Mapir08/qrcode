@@ -39,6 +39,7 @@
   ?>
 
   <section class="container" id="listIO">
+    <div class="retour"><a href="../../index.php" class="botn">Retour</a></div>
     <div class="selecteur">
       <select name="region" class="botn" id="region">
         <option value="" selected>Régions</option>
@@ -118,7 +119,7 @@
               </div>';
       }
     ?>
-    <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
+    <footer class="container-fluid"></footer>
   
   <?php
     }

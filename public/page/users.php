@@ -34,6 +34,7 @@
   ?>
 
   <section class="container user">
+    <div class="retour"><a href="../../index.php" class="botn">Retour</a></div>
     <div class="user_entete">
       <div class="user_initial">Initiale</div>
       <div class="user_nom">Nom</div>
@@ -69,7 +70,7 @@
       ?>
   </section>
 
-  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
+  <footer class="container-fluid"></footer>
   <?php
     }
     else
