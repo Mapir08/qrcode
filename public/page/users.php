@@ -38,7 +38,7 @@
       <div class="user_initial">Initiale</div>
       <div class="user_nom">Nom</div>
       <div class="user_prenom">Prénom</div>
-      <div class="user_tel">Tél</div>
+      <div class="user_Tel">Tél</div>
       <div class="user_company">Entreprise</div>
       <div class="user_del"></div>
     </div>

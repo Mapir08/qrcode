@@ -35,6 +35,7 @@
 
   <section class="container wtg">
     <div class="row">
+      <div class="retour"><a href="../../index.php" class="botn">Retour</a></div>
       <select id="wtg_regionSelect" placeholder="Région" class="wtg_regionSelect botn">
         <option value="" selected>Régions</option>
         <?php
@@ -92,7 +93,7 @@
       </div>
   </section>
   
-  <footer class="container-fluid"><a href="../../index.php">retour</a></footer>
+  <footer class="container-fluid"></footer>
   <?php
     }
     else

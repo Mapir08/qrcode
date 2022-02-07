@@ -9,7 +9,7 @@ $(function(){
      head.appendChild(script);
   }
   
-  $('#wtg-info input, #wtg-info select').change(function(){
+  $('#wtg-info #nb').change(function(){
     $('#wtg-info').submit();
   });
   $('#wtg-nb').submit(function(e){
