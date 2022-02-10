@@ -1,0 +1,100 @@
+#print{
+  margin-bottom: 40px;
+  #parc{
+    margin: 30px auto;
+  }
+  p{
+    font-size: 1.1rem;
+    font-style: italic;
+    color: $secondColor;
+    b{
+      font-family: primaryFontBold;
+      font-style: normal;
+    }
+  }
+  text-align: center;
+}
+#printArea{
+  display: none;
+  .printQR{
+    page-break-before: always;
+    width: 600px;
+    border: $primaryColor solid 2px;
+    border-radius: 70px 70px 70px 70px;
+    &_logo{
+      border-radius: 70px 70px 0 0;
+      line-height: 150px;
+      text-align: center;
+      vertical-align: middle;
+      font-family: primaryFontBold;
+      font-size: 7rem;
+      font-style: italic;
+      color: $primaryColor;
+      background: url("../img/turbineSmall.png") no-repeat;
+      background-position: top right 50px;
+    }
+    &_titre{
+      background-color: $primaryColor;
+      color: $thirdColor;
+      font-family: primaryFontBold;
+      font-size: 1.6rem;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 50px;
+    }
+    &_qr{
+      height: 400px;
+      text-align: center;
+      margin-top: 20px;
+      img{
+        display: inline-block;
+        transform:scale(1.3);
+        transform-origin: top;
+      }
+    }
+    &_qrText{
+      font-family: primaryFontBold;
+      font-size: 1.6rem;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 60px;
+      i{
+        font-size: 2.8rem;
+      }
+    }
+    &_safety{
+      border-top: $primaryColor solid 2px;
+      p{
+        display: block;
+        width: 400px;
+        text-align: center;
+        span:first-child{
+          font-family: primaryFontBold;
+          font-size: 1.4rem;
+        }
+        span:last-child{
+          color: grey;
+          font-style: italic;
+          font-size: 1rem;
+        }
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 70px 70px;
+      height: 190px;
+      img{
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+@media print {
+  #print, header, footer{
+    display: none;
+  }
+  #printArea{
+    display: block;
+  }
+}

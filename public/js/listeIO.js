@@ -29,7 +29,6 @@ $(function(){
       }
     });
     var listeParc = [...new Set(parc)]
-    console.log(listeParc);
     $('#parc option').each(function(){
       $(this).attr('hidden',true);
     });
