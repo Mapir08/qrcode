@@ -12,6 +12,9 @@
       font-style: normal;
     }
   }
+  #printBtn{
+    padding: 2px 20px;
+  }
   text-align: center;
 }
 #printArea{
@@ -26,12 +29,11 @@
       line-height: 150px;
       text-align: center;
       vertical-align: middle;
-      font-family: primaryFontBold;
-      font-size: 7rem;
-      font-style: italic;
-      color: $primaryColor;
       background: url("../img/turbineSmall.png") no-repeat;
       background-position: top right 50px;
+      img{
+        max-height: 70px;
+      }
     }
     &_titre{
       background-color: $primaryColor;

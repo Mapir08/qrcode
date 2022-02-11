@@ -34,6 +34,7 @@
       <li><a href="public/page/area.php" class="botn">Liste des régions</a></li>
       <li><a href="public/page/wtg.php" class="botn">Liste des WTG</a></li>
       <li><a href="public/page/checkQR.php" class="botn">Check si QR créé</a></li>
+      <li><a href="public/page/printQR.php" class="botn">Imprimer les QR Codes</a></li>
       <li><a href="public/page/users.php" class="botn">Liste des utilisateurs</a></li>
       <li><a href="public/page/safety.php" class="botn">Safety informations</a></li>
       <li><a href="public/page/inout.php" class="botn">Générer une entrée/sortie</a></li>
