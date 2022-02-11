@@ -78,18 +78,20 @@
   <section id="popup" hidden>
       <span id="closer">X</span>
       <h4>Nom du Parc</h4>
-      <div class="fenetre">
-        <div class="entete">
-          <div class="entete_pad">N°</div>
-          <div class="entete_serial">Serial</div>
-          <div class="entete_Lift">Next date<span class="sautligne">Lift</span></div>
-          <div class="entete_RetE">Next date<span class="sautligne">Rail/Echelle</span></div>
-          <div class="entete_Ext">Next date<span class="sautligne">Extincteur</span></div>
-          <div class="entete_Crane">Next date<span class="sautligne">Crane</span></div>
-          <div class="entete_Resq">Validité<span class="sautligne">ResQ</span></div>
-        </div>
-        <div id="allLigne">
-        </div>
+      <div class="corps">
+        <div class="fenetre">
+          <div class="entete">
+            <div class="entete_pad">N°</div>
+            <div class="entete_serial">Serial</div>
+            <div class="entete_Lift">Next date<span class="sautligne">Lift</span></div>
+            <div class="entete_RetE">Next date<span class="sautligne">Rail/Echelle</span></div>
+            <div class="entete_Ext">Next date<span class="sautligne">Extincteur</span></div>
+            <div class="entete_Crane">Next date<span class="sautligne">Crane</span></div>
+            <div class="entete_Resq">Validité<span class="sautligne">ResQ</span></div>
+          </div>
+          <div id="allLigne">
+          </div>
+      </div>
       </div>
   </section>
   
