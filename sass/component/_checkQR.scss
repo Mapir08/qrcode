@@ -17,7 +17,7 @@
     color: $thirdColor;
   }
   #listSerial{
-    width: 400px;
+    width: 480px;
     margin: 20px auto;
     .ligne{
       display: flex;
@@ -31,10 +31,10 @@
         font-family: primaryFontBold;
       }
       &_pad{
-        width: 50px;
+        width: 80px;
       }
       &_parc{
-        width: 250px;
+        width: 300px;
       }
     }
   }

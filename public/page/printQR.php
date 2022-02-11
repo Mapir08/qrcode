@@ -32,10 +32,10 @@
       <option value="" selected disabled>Parcs</option>
       <?php
         $db = Database::connect();
-        $tempo = $db->query('SELECT wtg.parc as `parc` FROM `in_out` INNER JOIN `wtg` ON in_out.serial = wtg.serial GROUP BY wtg.parc');
+        $tempo = $db->query('SELECT `nom` FROM `parc`');
         Database::disconnect();
         while ($row = $tempo->fetch(PDO::FETCH_ASSOC)){
-          echo '<option value="'.$row["parc"].'" name="'.$row["parc"].'">'.$row["parc"].'</option>';
+          echo '<option value="'.$row["nom"].'" name="'.$row["nom"].'">'.$row["nom"].'</option>';
         }
       ?>
     </select>

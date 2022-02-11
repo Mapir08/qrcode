@@ -140,17 +140,29 @@
   }
 }
 #popup{
-  position: absolute;
+  position: fixed;
   top: calc(50% - 200px);
   left: calc(50% - 395px);
-  width: 790px;
-  height: 400px;
+  z-index: 1;
   background-color: $thirdColor;
-  border: 3px solid $primaryColor;
   border-radius: 25px;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 5px 5px 15px $primaryColor;
+  &::before{
+    content:"";
+    position: fixed;
+    z-index: -1;
+    width: 300%;
+    height: 300%;
+    top : 0;
+    left : 0;
+    background-color: $thirdColor;
+    opacity: 0.4;
+  }
   h4{
-    margin: 12px 100px;
+    margin: 0;
+    padding-left: 100px;
+    vertical-align: middle;
+    line-height: 50px;
     font-family: primaryFontBold;
     text-decoration: underline;
     font-style: italic;
@@ -159,16 +171,14 @@
   #closer{
     position: absolute;
     font-family: secondFont;
-    top: 10px;
-    right: 15px;
+    top: 15px;
+    right: 20px;
     &:hover{
       cursor: pointer;
     }
   }
   .fenetre{
-    position: absolute;
-    top: 50px;
-    left: 20px;
+    margin: 0 20px 20px 20px;
     width: 745px;
     height: 328px;
     .entete, .ligne{
@@ -213,6 +223,7 @@
       .ligne{
         &_Lift, &_RetE, &_Ext, &_Resq, &_Crane{
           width: 114px;
+          cursor: pointer;
         }
         &_serial{
           width: 100px;
