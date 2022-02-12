@@ -29,7 +29,7 @@ $(function(){
               <div class="printQR_qrText"><i class="bi bi-capslock-fill"></i> Please scan before and after your job <i class="bi bi-capslock-fill"></i></div>\
               <div class="printQR_safety">\
                 <p><span>QR code SAFETY</span></br>\
-                <span>For safety inspection or problem find on a safety components (lift, ladder, rail, crane, extinguisher)</span></p>\
+                <span>For safety inspection or problem find on a safety component (lift, ladder, rail, crane, extinguisher)</span></p>\
                 <img src="../img/qr/safety.png" alt="QR Code pour le Safety">\
               </div>\
             </div>');
@@ -40,7 +40,12 @@ $(function(){
 
   $('#printBtn').click(function(e){
     e.preventDefault();
-    window.print();
+    function print (){
+      $('*').removeClass('wait');
+      window.print()
+    }
+    $('*').addClass('wait');
+    window.setTimeout(print, 5000)
   });
 
 });

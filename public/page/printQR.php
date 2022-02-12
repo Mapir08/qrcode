@@ -26,7 +26,7 @@
     <p>
       <b>Lorsque la fenêtre d'impression s'ouvrira : </b><br>
       - Vérifier à ce que les QR Codes soient créés <br>
-      - Imprimer en A5 pour une bonne mise en page
+      - Vérifier que le titre dans la ligne bleu contient les 3 éléments<br>
     </p>
     <select name="parc" class="botn" id="parc">
       <option value="" selected disabled>Parcs</option>

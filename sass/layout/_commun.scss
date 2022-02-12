@@ -30,6 +30,9 @@ button{
     box-shadow: 1px 1px 1px $primaryColor;
   }
 }
+.wait{
+  cursor: wait !important;
+}
 .error{
   border-color: red;
   color: red;
